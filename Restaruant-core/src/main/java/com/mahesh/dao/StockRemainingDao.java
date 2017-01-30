@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 
+import com.mahesh.model.FoodSchedule;
+import com.mahesh.model.Menu;
 import com.mahesh.model.StockRemaining;
 import com.mahesh.util.ConnectionUtil;
 
@@ -42,9 +44,13 @@ public class StockRemainingDao {
 		String sql = "select id,menu_id,schedule_id,quantity from stock_remaining";
 		List<StockRemaining> list = jdbcTemplate.query(sql, (rs, rowNum) -> {
 			StockRemaining stockRemaining= new StockRemaining();
+			Menu menu=new Menu();
+			FoodSchedule foodSchedule=new FoodSchedule();
 			stockRemaining.setId(rs.getInt("id"));
-			stockRemaining.setMenuId(rs.getInt("menu_id"));
-			stockRemaining.setScheduleId(rs.getInt("schedule_id"));
+			menu.setId(rs.getInt("id"));
+			stockRemaining.setMenuId(menu);
+			foodSchedule.setId(rs.getInt("id"));
+			stockRemaining.setScheduleId(foodSchedule);
 			stockRemaining.setQuantity(rs.getInt("quantity"));
 			return stockRemaining;
 

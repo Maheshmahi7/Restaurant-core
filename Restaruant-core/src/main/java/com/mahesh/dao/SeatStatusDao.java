@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 
+import com.mahesh.model.Seat;
 import com.mahesh.model.SeatStatus;
 import com.mahesh.util.ConnectionUtil;
 
@@ -43,8 +44,10 @@ public class SeatStatusDao {
 		String sql = "select id,seat_id,status from seat_status";
 		List<SeatStatus> list = jdbcTemplate.query(sql, (rs, rowNum) -> {
 			SeatStatus seatStatus=new SeatStatus();
+			Seat seat=new Seat();
 			seatStatus.setId(rs.getInt("id"));
-			seatStatus.setSeatId(rs.getInt("seat_id"));
+			seat.setId(rs.getInt("id"));
+			seatStatus.setSeatId(seat);
 			seatStatus.setStatus(rs.getString("status"));
 			return seatStatus;
 

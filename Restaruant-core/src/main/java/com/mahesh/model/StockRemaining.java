@@ -6,8 +6,8 @@ import lombok.Data;
 public class StockRemaining {
 	
 	private int id;
-	private int menuId;
-	private int scheduleId;
+	private Menu menuId;
+	private FoodSchedule scheduleId;
 	private int quantity;
 
 }

@@ -7,7 +7,7 @@ public class Bill {
 	
 
 	private int id;
-	private int orderId;
+	private Orders orderId;
 	private int totalCost;
 	private String status;
 	

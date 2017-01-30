@@ -3,6 +3,9 @@ package com.mahesh.dao;
 import java.util.List;
 
 import org.springframework.jdbc.core.JdbcTemplate;
+
+import com.mahesh.model.Menu;
+import com.mahesh.model.Orders;
 import com.mahesh.model.Transaction;
 import com.mahesh.util.ConnectionUtil;
 
@@ -34,9 +37,13 @@ public class TransactionDao {
 		String sql = "select id,order_id,menu_id,quantity,ordered_time,status from transaction_hotel";
 		List<Transaction> list = jdbcTemplate.query(sql, (rs, rowNum) -> {
 			Transaction transaction= new Transaction();
+			Menu menu=new Menu();
+			Orders orders=new Orders();
 			transaction.setId(rs.getInt("id"));
-			transaction.setOrderId(rs.getInt("order_id"));
-			transaction.setMenuId(rs.getInt("menu_id"));;
+			orders.setId(rs.getInt("id"));
+			transaction.setOrderId(orders);
+			menu.setId(rs.getInt("id"));
+			transaction.setMenuId(menu);;
 			transaction.setQuantity(rs.getInt("quantity"));
 			transaction.setOrderedTime(rs.getTime("ordered_time").toLocalTime());
 			transaction.setStatus(rs.getString("status"));

@@ -6,7 +6,7 @@ import lombok.Data;
 public class SeatStatus {
 	
 	private int id;
-	private int seatId;
+	private Seat seatId;
 	private String status;
 
 }

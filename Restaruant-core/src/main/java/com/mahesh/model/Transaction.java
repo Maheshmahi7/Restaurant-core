@@ -7,8 +7,8 @@ import lombok.Data;
 public class Transaction {
 	
 	private int id;
-	private int orderId;
-	private int menuId;
+	private Orders orderId;
+	private Menu menuId;
 	private int quantity;
 	private LocalTime OrderedTime;
 	private String status;
