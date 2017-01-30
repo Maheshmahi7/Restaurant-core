@@ -5,6 +5,7 @@ import lombok.Data;
 
 @Data
 public class Transaction {
+	
 	private int id;
 	private int orderId;
 	private int menuId;

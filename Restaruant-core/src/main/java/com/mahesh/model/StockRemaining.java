@@ -4,6 +4,7 @@ import lombok.Data;
 
 @Data
 public class StockRemaining {
+	
 	private int id;
 	private int menuId;
 	private int scheduleId;

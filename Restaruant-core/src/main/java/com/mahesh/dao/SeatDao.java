@@ -9,6 +9,7 @@ import com.mahesh.util.ConnectionUtil;
 
 public class SeatDao {
 	
+	
 	JdbcTemplate jdbcTemplate = ConnectionUtil.getJdbcTemplate();
 
 

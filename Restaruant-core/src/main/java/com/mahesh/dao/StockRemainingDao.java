@@ -8,6 +8,7 @@ import com.mahesh.model.StockRemaining;
 import com.mahesh.util.ConnectionUtil;
 
 public class StockRemainingDao {
+	
 	JdbcTemplate jdbcTemplate = ConnectionUtil.getJdbcTemplate();
 
 

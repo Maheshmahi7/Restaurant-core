@@ -14,6 +14,7 @@ import org.springframework.jdbc.core.simple.SimpleJdbcCall;
 import com.mahesh.util.ConnectionUtil;
 
 public class ProcedureDao {
+	
 	JdbcTemplate jdbcTemplate = ConnectionUtil.getJdbcTemplate();
 
 	

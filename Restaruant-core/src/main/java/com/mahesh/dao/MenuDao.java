@@ -9,6 +9,7 @@ import com.mahesh.util.ConnectionUtil;
 
 public class MenuDao {
 	
+	
 	JdbcTemplate jdbcTemplate = ConnectionUtil.getJdbcTemplate();
 
 

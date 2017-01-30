@@ -4,6 +4,7 @@ import lombok.Data;
 
 @Data
 public class Bill {
+	
 
 	private int id;
 	private int orderId;
