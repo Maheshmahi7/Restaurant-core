@@ -47,9 +47,9 @@ public class StockRemainingDao {
 			Menu menu=new Menu();
 			FoodSchedule foodSchedule=new FoodSchedule();
 			stockRemaining.setId(rs.getInt("id"));
-			menu.setId(rs.getInt("id"));
+			menu.setId(rs.getInt("menu_id"));
 			stockRemaining.setMenuId(menu);
-			foodSchedule.setId(rs.getInt("id"));
+			foodSchedule.setId(rs.getInt("schedule_id"));
 			stockRemaining.setScheduleId(foodSchedule);
 			stockRemaining.setQuantity(rs.getInt("quantity"));
 			return stockRemaining;

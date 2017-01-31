@@ -40,9 +40,9 @@ public class TransactionDao {
 			Menu menu=new Menu();
 			Orders orders=new Orders();
 			transaction.setId(rs.getInt("id"));
-			orders.setId(rs.getInt("id"));
+			orders.setId(rs.getInt("order_id"));
 			transaction.setOrderId(orders);
-			menu.setId(rs.getInt("id"));
+			menu.setId(rs.getInt("menu_id"));
 			transaction.setMenuId(menu);;
 			transaction.setQuantity(rs.getInt("quantity"));
 			transaction.setOrderedTime(rs.getTime("ordered_time").toLocalTime());

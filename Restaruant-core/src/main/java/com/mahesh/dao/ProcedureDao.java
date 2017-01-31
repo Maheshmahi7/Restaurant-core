@@ -1,7 +1,6 @@
 package com.mahesh.dao;
 
 import java.sql.Types;
-
 import java.util.Map;
 
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -9,7 +8,6 @@ import org.springframework.jdbc.core.SqlOutParameter;
 import org.springframework.jdbc.core.SqlParameter;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.simple.SimpleJdbcCall;
-
 
 import com.mahesh.util.ConnectionUtil;
 
@@ -37,6 +35,14 @@ public class ProcedureDao {
 		String status = (String) execute.get("message_status");
 		return status;
 
+	}
+	
+	public int getItemId(String name){
+		String sql = "select FN_GET_MENU_ID(?)";
+		Object[] params = { name };
+		int id = jdbcTemplate.queryForObject(sql, params,int.class);
+		//System.out.println("No of rows updated: " + rows);
+		return id;
 	}
 	
 	
